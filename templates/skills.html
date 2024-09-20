@@ -1,0 +1,70 @@
+{%extends 'layout.html'%}
+
+{%block body%}
+<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    {% set fsno = '/skills/' + sno %}
+    <form class="space-y-6" action={{fsno}} method="POST">
+        <div>
+            <label for="email" class="block text-sm font-medium leading-6 text-white">Skill</label>
+            <div class="mt-2">
+                <input id="email" name="skill" type="text" autocomplete="email" required
+                    class="block w-full rounded-md border-0 py-1.5 text-black font-bold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-white  focus:outline-none sm:text-sm sm:leading-6"
+                    {% if sno !='0' %} value={{skills.name}} {% endif %}>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex items-center justify-between">
+                <label for="password" class="block text-sm font-medium leading-6 text-white">Accuracy out of 100</label>
+            </div>
+            <div class="mt-2">
+                <input id="password" name="accuracy" type="number" required
+                    class="block w-full rounded-md border-0 py-1.5 text-black font-bold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black  focus:outline-none sm:text-sm sm:leading-6"
+                    {% if sno !='0' %} value={{skills.accuracy}} {% endif %}>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit"
+                class="flex w-full justify-center rounded-md bg-cyan-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600">ADD</button>
+        </div>
+    </form>
+</div>
+{% if sno == '0' %}
+
+
+<table class="mt-20 w-full text-white">
+    <thead>
+        <th>Name</th>
+        <th>Accuracy</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        {% for skill in skills %}
+        <tr>
+            <td class="text-center">
+                {{skill.name}}
+            </td>
+            <td class="text-center">
+                {{skill.accuracy}}
+            </td>
+            <td class="text-center">
+                {% set fname = '/skills/' + skill.id | string() %}
+                <button class="md:left-36 md:top-2/3 top-40 left-12  bg-bright rounded-lg py-1 px-2 btnShadow">
+                    <a href={{fname}} class="text-white text-lg font-semibold ">Edit</a>
+                </button>
+            </td>
+            <td class="text-center">
+                {%set fname2 = "/skills/delete/" + skill.id | string() %}
+                <button class="md:left-36 md:top-2/3 top-40 left-12  bg-bright rounded-lg py-1 px-2 btnShadow">
+                    <a href={{fname2}} class="text-white text-lg font-semibold ">Delete</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{%endblock%}

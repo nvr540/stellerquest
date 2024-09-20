@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+    <title>Nivrita Podder {%block title%} {% endblock %}</title>
+  </head>
+
+  <body class="bg-black">
+    
+
+    {%block body %}
+
+    {% endblock %}
+
+
+  </body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/static/js/script.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#mobile-menu-button").click(function () {
+        $("#mobile-menu").toggleClass("open");
+      });
+    });
+  </script>
+  
+  
+</html>

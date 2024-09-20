@@ -1,0 +1,610 @@
+{%extends "layout.html" %} {%block title%}
+
+{%endblock%} {%block body%}
+<!-- 5 section hobe -->
+
+<section id="landing"
+  class="h-[100vh] w-[100%]  justify-items-center items-start bg-[url('/static/img/space_bg.jpeg')] bg-no-repeat bg-cover bg-center">
+  <div id="navBar">
+    <nav class="flex relative md:static justify-between bg-transparent text-white md:p-3 p-2">
+      <a href="/" class=" text-5xl font-semibold text-[rgb(53, 184,225, 0.86)]   italic my-auto"
+        style="color: rgb(0 255 255)">
+        StellerQuest
+      </a>
+      <button id="mobile-menu-button" class="md:hidden block px-2 py-1 text-bright active:animate-ping">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div id="mobile-menu"
+        class="flex absolute md:static bg-transparent md:flex-row flex-col md:space-x-6 justify-end  rounded-bl-[12px] right-0 top-10 text-md md:my-auto border-l-2 border-b-2 border-bright md:border-none">
+        <a href="/"
+          class=" border-b-2 font-bold md:border-none border-bright cursor-pointer p-2 w-40 text-center md:w-auto">
+          Home
+        </a>
+        <a href="/quest"
+          class=" font-bold border-b-2 md:border-none border-bright cursor-pointer p-2 w-40 text-center md:w-auto">
+          Quest
+        </a>
+        <!-- <a href="/about"
+          class=" font-bold border-b-2 md:border-none border-bright cursor-pointer p-2 w-40 text-center md:w-auto">
+          About
+        </a> -->
+        <a href="/#contact_form" class=" font-bold cursor-pointer p-2 w-40 text-center md:w-auto">Ask Ai</a>
+        <!-- last etar border lagbe na -->
+      </div>
+    </nav>
+  </div>
+  <div id="introduction" class="w-[100%] relative">
+    <p class=" font-bold .glowing-text-p text-5xl text-white md:text-start absolute md:left-14 left-4 top-2 md:top-48"
+      data-aos="slide-up" data-aos-delay="100" data-aos-duration="1000">
+      Hey,
+    </p>
+    <br />
+    <p class=" font-bold text-5xl text-white md:text-center absolute md:left-36 left-16 top-16 md:top-60"
+      data-aos="fade-left" data-aos-delay="800" data-aos-duration="2000">
+      New Explorer
+    </p>
+    <span
+      class="flex space-x-2 font-bold md:text-2xl text-1xl md:text-start absolute md:left-36 md:top-80 top-32 left-12 mb-20">
+      <!-- Typing effect -->
+      <div>
+        <p class="text-bright" data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000">
+          Let's Find Out
+        </p>
+      </div>
+      <div class="flex">
+        <p id="typing-text" class="glowing-text2 text-white font-serif text-4xl" data-aos="fade-right"
+          data-aos-delay="800" data-aos-duration="1000"></p>
+      </div>
+    </span>
+
+    <!-- All the icons of my socials -->
+    <div class="md:flex md:space-x-4 md:left-36 md:top-[30rem] top-40 left-12 absolute">
+      <button data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"
+        class=" bg-bright rounded-lg py-1 px-2  btnShadow">
+        <a href="/#RoadMap" class="text-white text-lg font-semibold ">Let's Explore</a>
+      </button>
+      <button data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000"
+        class="bg-bright rounded-lg py-1 px-2 btnShadow">
+        <a href="/quest" class="text-white text-lg font-semibold ">Start Your Quest</a>
+      </button>
+
+    </div>
+  </div>
+  <!-- <button class="md:left-36 md:top-2/3 top-60 left-12 absolute bg-bright rounded-lg py-1 px-2 btnShadow">
+    <a href="/about" class="text-white text-lg font-semibold ">More About Me</a>
+  </button> -->
+
+  <!-- <div id="photo" class="self-start relative rounded-[50%]   glow-box md:w-96 md:h-96 w-80 h-80 md:mt-20 -mt-20 "
+    data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+    <img src="/static/img/profile2.jpg" alt="Nivita Podder"
+      class="rounded-[50%] w-[100%] h-[100%] absolute fade-image" />
+    <img src="/static/img/profile3.jpg" alt="Nivita Podder"
+      class="rounded-[50%] w-[100%] h-[100%] absolute fade-image" />
+    <img src="/static/img/profile1.jpg" alt="Nivita Podder"
+      class="rounded-[50%] w-[100%] h-[100%] absolute fade-image" />
+  </div> -->
+</section>
+
+<!-- <div class="bg-bright h-0.5 w-[50vw] mx-auto"></div> -->
+<!-- There is an image slider of my certificates -->
+
+
+<!-- Roadmap -->
+<section class="process-wrapper h-[100vh] bg-[url('/static/img/roadmap7.jpeg')] bg-no-repeat bg-cover bg-center"
+>
+  <h1 id="RoadMap" class="text-[rgb(0,249,240)] text-center text-5xl text-bold mt-2 "  data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000">Exploration Map</h1>
+  <br>
+  <div id="progress-bar-container">
+    <ul>
+      <li class="step step01 active">
+        <div class="step-inner">INTRO</div>
+      </li>
+      <li class="step step02">
+        <div class="step-inner">DETECTION METHOD</div>
+      </li>
+      <li class="step step03">
+        <div class="step-inner">CLASSIFICATION</div>
+      </li>
+      <li class="step step04">
+        <div class="step-inner">PLANETARY SYSTEM</div>
+      </li>
+      <li class="step step05">
+        <div class="step-inner">HABITABILITY</div>
+      </li>
+      <li class="step step06">
+        <div class="step-inner">ATMOSPHERE</div>
+      </li>
+      <li class="step step07">
+        <div class="step-inner">MISSION</div>
+      </li>
+    </ul>
+
+    <div id="line">
+      <div id="line-progress"></div>
+    </div>
+  </div>
+
+  <div id="progress-content-section">
+    <div class="section-content discovery active">
+      <h2>INTRODUCTION</h2>
+      <p>This section explores the fascinating history of exoplanet discovery, from the early hypotheses to the
+        groundbreaking findings of today. It highlights the significance of studying exoplanets, including how they help
+        us understand the potential for life beyond our Solar System, and the impact these discoveries have on our
+        understanding of the universe.</p>
+    </div>
+
+    <div class="section-content strategy">
+      <h2>DETECTION METHOD</h2>
+      <p>Here, we delve into the various techniques used to detect exoplanets, such as the transit method, radial
+        velocity, direct imaging, and gravitational microlensing. Each method's principles, advantages, and limitations
+        are explained to illustrate how astronomers identify these distant worlds.</p>
+    </div>
+
+    <div class="section-content creative">
+      <h2>CLASSIFICATION</h2>
+      <p>This section categorizes exoplanets based on their properties and characteristics, such as their size,
+        composition, and orbit. We explain different types of exoplanets, from gas giants to rocky Earth-like planets,
+        and discuss how these classifications help in understanding their potential habitability.</p>
+    </div>
+
+    <div class="section-content production">
+      <h2>PLANETARY SYSTEM</h2>
+      <p>Explore the diverse planetary systems discovered around other stars. This section covers the various
+        configurations of exoplanetary systems, from single-planet systems to those with multiple planets. It also
+        examines how these systems compare to our own Solar System.</p>
+    </div>
+
+    <div class="section-content analysis">
+      <h2>HABITABILITY</h2>
+      <p>Discuss the criteria for habitability and the search for Earth-like conditions on exoplanets. This section
+        evaluates factors such as distance from the host star, atmospheric composition, and surface conditions that
+        could support liquid water and, potentially, life.</p>
+    </div>
+    <div class="section-content extra1">
+      <h2>ATMOSPHERE</h2>
+      <p>Analyze the physical and chemical characteristics of exoplanets, including their size, mass, density, and
+        atmospheric composition. This section provides insight into how these properties affect the planet's climate and
+        potential for supporting life.</p>
+    </div>
+    <div class="section-content extra2">
+      <h2>Missions</h2>
+      <p>Highlight current and upcoming space missions aimed at exploring and studying exoplanets. This includes
+        missions focused on direct imaging, atmospheric analysis, and planetary surveys, showcasing how these missions
+        advance our knowledge of exoplanets</p>
+    </div>
+  </div>
+</section>
+
+<!-- Classification -->
+<section id="types_of_planet" class="bg-[url('/static/img/gas_giant.jpg')] h-[100vh] bg-no-repeat bg-cover bg-center">
+  <div class="bg-transparent md:w-full m-auto h-auto md:h-96 my-20">
+      <h1 class="text-[#00aaff] text-5xl text-center" data-aos="fade-down" data-aos-delay="500"
+          data-aos-duration="1000">
+          Exoplanet Categories
+      </h1>
+      <div
+          class="flex flex-col md:grid w-full md:grid-cols-2 md:grid-rows-1 space-y-6 mt-20 items-center justify-center">
+          <div class="justify-self-start space-y-6 ml-10">
+              <ul id="main-list" class="space-y-3">
+                  <li id="gas_giant"
+                      class="glass-box text-white text-center p-3 rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-105"
+                      data-target="sub-list-1" data-aos="fade-down" data-aos-delay="800" data-aos-duration="1000">
+                      • Gas Giants
+                      <ul id="sub-list-1" class="mt-2 pl-5 hidden space-y-2">
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Kepler-7b</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">TrES-2b</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">ROXs 42Bb</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Load More...</li>
+                      </ul>
+                  </li>
+                  <li id="neptune"
+                      class="glass-box text-white text-center p-3 rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-105"
+                      data-target="sub-list-2" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="1000">
+                      • Neptunian Planets
+                      <ul id="sub-list-2" class="mt-2 pl-5 hidden space-y-2">
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">HAT</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">GJ</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">TOI</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Load More...</li>
+                      </ul>
+                  </li>
+                  <li id="super_earth"
+                      class="glass-box text-white text-center p-3 rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-105"
+                      data-target="sub-list-3" data-aos="fade-down" data-aos-delay="1600" data-aos-duration="1000">
+                      • Super-Earths
+                      <ul id="sub-list-3" class="mt-2 pl-5 hidden space-y-2">
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Kepler-452b</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Gliese 667 Cc</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Kepler-62f</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Load More...</li>
+                      </ul>
+                  </li>
+                  <li id="terrestrial"
+                      class="glass-box text-white text-center p-3 rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-105"
+                      data-target="sub-list-4" data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000">
+                      • Terrestrial Planets
+                      <ul id="sub-list-4" class="mt-2 pl-5 hidden space-y-2">
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Gliese 667 Cc</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">55 Cancri e</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">HD 85512 b</li>
+                          <li class="nested-glass-box p-2 rounded-lg cursor-pointer transition-transform duration-300 transform translate-x-[-50px] opacity-0"
+                              onclick="showModal()">Load More...</li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+          <div>
+              <div id="exo_desc" class="text-lg text-white ml-10">
+                  <h1 class="text-5xl my-4" id="exo_type_name">Gas Giants</h1>
+                  <p id="exo_type">
+                      Gas giants are planets the size of Saturn or Jupiter, the largest planet in our solar system, or
+                      much, much larger. More variety is hidden within these broad categories. Hot Jupiters, for
+                      instance, were among the first planet types found – gas giants orbiting so closely to their
+                      stars that their temperatures soar into the thousands of degrees (Fahrenheit or Celsius).
+                  </p>
+                  <br>
+                  <a href="/about" class="text-bright glowing-text2 italic">For more...</a><br />
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="modal"
+    class="fixed inset-0 bg-[url('/static/img/keplar_7b.jpeg')] bg-no-repeat bg-cover bg-center h-[80vh] w-[50%] flex items-center justify-center  transition-transform duration-1000 rounded-xl my-auto ml-20 invisible scale-90">
+    <div class="absolute bg-transparent p-6 rounded-lg top-1 right-2">
+        <button onclick="hideModal()" class="text-white text-5xl hover:text-gray-900">
+            &times;
+        </button>
+    </div>
+    <div class="absolute top-5">
+        <h1 class="text-bright text-5xl text-center">Keplar-7b</h1>
+    </div>
+    <div class="max-w-[50%] absolute bottom-10 p-4 left-14 bg-black bg-opacity-40 rounded-lg shadow-lg">
+        <h2 class="text-white text-2xl font-bold mb-2">Fun Fact about Kepler-7b</h2>
+        <div class="text-white text-base">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold">What is Kepler-7b?</h3>
+                <p>Kepler-7b is a giant planet far away in space, like a huge balloon filled with gas! 🎈</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold">Why is it Special?</h3>
+                <ul class="list-disc pl-5">
+                    <li>It's much bigger than Earth.</li>
+                    <li>It's made mostly of gas, not solid like our planet.</li>
+                    <li>It’s in a distant galaxy, far from our solar system!</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Imagine This!</h3>
+                <p>Think of a world where it rains diamonds or where the sky is always colorful. Space is full of
+                    amazing surprises! 🌌</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- It's the skills secttion, It need to be made pythonic way. -->
+
+
+</section>
+<section class="slider">
+  <p class="text-[#00aaff] text-5xl mt-20 absolute -top-20 left-[38%] z-[10000] text-center" data-aos="fade-right"
+    data-aos-delay="300" data-aos-duration="1000">Stellar Insights</p>
+  <p class="text-[#00aaff] text-5xl mt-20 absolute -top-20 left-[38%] z-[10000] text-center" data-aos="fade-right"
+    data-aos-delay="300" data-aos-duration="1000">Stellar Insights</p>
+  <!-- list Items -->
+  <div class="list">
+    <div class="item active">
+      <img src="/static/img/hubble.jpg">
+      <div class="content">
+        <p>Project</p>
+        <h2 class="text-l">Hubble
+        </h2>
+        <p>
+
+          Hubble's powerful optics have captured stunning cosmic images and directly imaged exoplanets, including
+          Fomalhaut b. Astronomers still analyze its photos for previously undetected exoplanets.
+        </p>
+        <div class="flex space-x-3">
+          <button onclick="showModal2()" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000"
+              class="bg-bright text-white text-sm font-semibold  rounded-lg py-1 px-2 btnShadow mt-20">Mission
+              Insights
+          </button>
+      </div>
+      </div>
+    </div>
+    <div class="item ">
+      <img src="/static/img/keplar.jpg">
+      <div class="content">
+        <p>Mission</p>
+        <h2>Kepler</h2>
+        <p>
+
+          After nine years in deep space, NASA's Kepler telescope, which discovered over 2,600 exoplanets, ran out of
+          fuel in 2018 and was retired in a safe orbit. Its legacy reveals a sky filled with billions of hidden planets,
+          many potential havens for life.
+        </p>
+        <div class="flex space-x-3">
+          <button  data-aos="fade-right"
+          data-aos-delay="800" data-aos-duration="1000" class="bg-bright rounded-lg py-1 px-2 btnShadow mt-20">
+            <a href="/quest" class="text-white text-sm font-semibold ">Mission Insights</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/static/img/spitzer0.jpeg">
+      <div class="content">
+        <p>Mission</p>
+        <h2>Spitzer
+        </h2>
+        <p>
+          Spitzer, designed for infrared observation, revolutionized exoplanet study by being the first to directly
+          detect exoplanet light, revealing their composition, temperature, and wind patterns.
+        </p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/static/img/roman.jpeg">
+      <div class="content">
+        <p>Mission</p>
+        <h2>Roman</h2>
+        <p>
+          The Nance Grace Roman Space Telescope (formerly known as WFIRST) is a NASA observatory designed to settle
+          essential questions in the areas of dark energy, exoplanets and infrared astrophysics.
+
+        </p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/static/img/tess.jpeg">
+      <div class="content">
+        <p>Mission</p>
+        <h2>TESS </h2>
+        <p>
+          The Transiting Exoplanet Survey Satellite (TESS) is searching for the most promising exoplanet targets for
+          next-generation studies.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- button arrows -->
+  <div class="arrows">
+    <button id="prev">
+      < </button>
+        <button id="next">></button>
+  </div>
+  <!-- thumbnail -->
+  <div class="thumbnail -bottom-12">
+    <div data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" class="item active">
+      <img src="/static/img/hubble.jpeg">
+      <div class="content">
+        Hubble
+      </div>
+    </div>
+    <div data-aos="fade-right" data-aos-delay="1200" data-aos-duration="1000" class="item ">
+      <img src="/static/img/keplar.jpg">
+      <div class="content">
+        Kepler
+      </div>
+    </div>
+
+    <div data-aos="fade-right" data-aos-delay="1600" data-aos-duration="1000" class="item">
+      <img src="/static/img/spitzer0.jpeg">
+      <div class="content">
+        Spitzer
+      </div>
+    </div>
+    <div data-aos="fade-right" data-aos-delay="2000" data-aos-duration="1000" class="item">
+      <img src="/static/img/roman.jpeg">
+      <div class="content">
+        Roman
+      </div>
+    </div>
+    <div data-aos="fade-right" data-aos-delay="2400" data-aos-duration="1000" class="item">
+      <img src="/static/img/tess.jpeg">
+      <div class="content">
+        TESS
+      </div>
+    </div>
+  </div>
+  <div id="modal2"
+  class="absolute z-[19999999999999] inset-0 bg-[url('/static/img/hubble_big.jpeg')] bg-no-repeat bg-cover bg-center h-[90vh] w-[70%] flex items-center justify-center transition-transform duration-1000 rounded-xl my-auto ml-20 invisible scale-90">
+  <div class="absolute bg-transparent p-6 rounded-lg top-1 right-2">
+      <button onclick="hideModal2()" class="text-white text-5xl hover:text-gray-900">
+          &times;
+      </button>
+  </div>
+  <div class="absolute top-10">
+      <h1 class="text-bright text-5xl text-center">Hubble Space Telescope</h1>
+  </div>
+  <div class="max-w-[70%] absolute  p-4 right-auto top-28 bg-black bg-opacity-40 rounded-lg shadow-lg">
+      <h2 class="text-white text-2xl font-bold mb-2">Fun Fact about Hubble</h2>
+      <div class="text-white text-base">
+          <div class="mb-4">
+              <h3 class="text-lg text-bright font-semibold">What is the Hubble Space Telescope?</h3>
+              <p>The Hubble Space Telescope is a powerful observatory orbiting Earth, capturing breathtaking
+                  images
+                  of the universe and helping us understand the cosmos. 🚀</p>
+          </div>
+          <div class="mb-4">
+              <h3 class="text-lg text-bright font-semibold">Why is Hubble Special?</h3>
+              <ul class="list-disc pl-5">
+                  <li>It has captured the most detailed images of distant galaxies, stars, and planets.</li>
+                  <li>Hubble has revolutionized our understanding of the universe's size, age, and structure.</li>
+                  <li>It has contributed to groundbreaking discoveries, including the accelerating expansion of
+                      the
+                      universe.</li>
+              </ul>
+          </div>
+          <div>
+              <h3 class="text-lg font-semibold text-bright">Imagine This!</h3>
+              <p>Imagine peering into the depths of space and witnessing the birth of stars or the majestic beauty
+                  of
+                  distant galaxies, all through Hubble's lens. 🌌</p>
+          </div>
+      </div>
+      <button  data-aos="fade-right"
+      data-aos-delay="800" data-aos-duration="1000" class="bg-bright rounded-lg py-1 px-2 items-center btnShadow mt-5">
+        <a href="/hubble" class="text-white text-sm font-semibold ">Visit Hubble</a>
+      </button>
+  </div>
+</div>
+</section>
+
+<p class="text-[#00aaff] text-5xl mt-20 text-center" data-aos="fade-right" data-aos-delay="300"
+  data-aos-duration="1000">AI Answers</p>
+<section id="contact_form" class="md:grid md:grid-cols-2 mt-10">
+  <div>
+    <p class="text-bright font-bold glowing-text2 md:ml-10  ml-5 text-start md:text-3xl text-xl" data-aos="fade-right"
+      data-aos-delay="600" data-aos-duration="1000">Let's embark on an interstellar adventure and discover the mysteries
+      of exoplanets with the power of AI<br><br>Where your imagination meets the wonders of the universe!</p>
+    </p>
+    <div class="flex md:space-x-6 md:ml-10 md:mt-10 ml-5 mt-5" data-aos="fade-right" data-aos-delay="400"
+      data-aos-duration="1000">
+      <button class="bg-bright rounded-lg py-1 px-2 btnShadow">
+        <a href="/quest" class="text-white text-lg font-semibold ">Start Your Quest</a>
+      </button>
+    </div>
+  </div>
+  </div>
+  <div class="mb-20" data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000">
+    <!-- <form class="w-[50%] max-w-lg m-auto" method="post" action="/contact" autocomplete="off">
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-bright text-xs font-bold mb-2" for="grid-first-name">
+            First Name
+          </label>
+          <input
+            class="appearance-none block w-full bg-transparent focus:bg-transparent text-white  border-b-2 border-b-bright  py-3 px-4 mb-3 leading-tight focus:outline-none focus:shadow-lg focus:shadow-cyan-500 "
+            id="grid-first-name" type="text" placeholder="First Name" required autocomplete="off" name="first_name">
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-bright text-xs font-bold mb-2" for="grid-last-name">
+            Last Name
+          </label>
+          <input
+            class="autofill:bg-transparent appearance-none block w-full bg-transparent focus:bg-transparent text-white border-b-2 border-b-bright  py-3 px-4 mb-3 leading-tight focus:outline-none focus:shadow-lg focus:shadow-cyan-500"
+            id="grid-last-name" type="text" placeholder="Last Name" name="last_name">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-bright text-xs font-bold mb-2" for="grid-password">
+            E-mail
+          </label>
+          <input
+            class="appearance-none block w-full bg-transparent focus:bg-transparent text-white border-b-2 border-b-bright  py-3 px-4 mb-3 leading-tight focus:outline-none focus:shadow-lg focus:shadow-cyan-500 "
+            id="email" type="email" placeholder="Email" name="email">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-bright text-xs font-bold mb-2" for="grid-password">
+            Message
+          </label>
+          <textarea
+            class=" no-resize appearance-none block w-full bg-transparent text-white border-bright border  py-3 px-4 mb-3 leading-tight focus:outline-none h-48 resize-none focus:shadow-lg focus:shadow-cyan-500 "
+            id="message" name="msg"></textarea>
+
+        </div>
+      </div>
+      <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+          <button class="shadow bg-bright btnShadow text-white font-bold py-2 px-4 rounded" type="submit">
+            Send
+          </button>
+        </div>
+        <div class="md:w-2/3"></div>
+      </div>
+    </form> -->
+    <div
+      class="w-full max-w-lg p-2 ml-20 border-bright focus:shadow-lg  bg-transparent h-[55vh]  border-2 rounded-lg shadow-lg">
+      <div class="flex flex-col h-80 space-y-4 overflow-y-auto">
+        <!-- Messages -->
+        <div class="bg-cyan-600 p-3 rounded-lg self-start">
+          <p class="text-sm">Ask me any qeury I'm here to help</p>
+        </div>
+
+        <!-- Add more messages as needed -->
+      </div>
+      <div class="mb-20">
+        <form class="flex">
+          <input type="text" placeholder="Type your message..."
+            class="w-full p-3 rounded-l-lg border border-gray-300  focus:outline-none ">
+          <button type="submit"
+            class="bg-blue-500 text-white p-3 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get a reference to the animated element
+    const animatedElement = document.querySelector(".animated-element");
+
+    // Get a reference to the trigger section
+    const triggerSection = document.querySelector(".trigger-section");
+
+    // Function to check if the element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the "animate" class if the element is in the viewport
+    function checkAnimation() {
+      if (isInViewport(triggerSection)) {
+        //Run a for loop accrording to the class_name and select it change the style to width according to the databases.
+        {% for skill in skills %}
+        document.querySelector(".animated-{{skill.name}}").style = "width: {{skill.accuracy}}%";
+        {% endfor %}
+        // animatedElement.classList.add("animate");
+        // animatedElement.style
+        // Remove the scroll event listener once the animation is triggered
+        window.removeEventListener("scroll", checkAnimation);
+      }
+    }
+
+    // Add a scroll event listener to check for animation trigger
+    window.addEventListener("scroll", checkAnimation);
+
+    // Initial check to see if the element is already in the viewport
+    checkAnimation();
+  });
+  const slide_len1 = {{ slide1 | int}} - 1;
+  const slide_len2 = {{ slide2 | int}} - 1;
+</script>
+
+{%endblock%}

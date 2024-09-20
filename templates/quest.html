@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background: url('/static/img/game_bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-box {
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            transition: opacity 0.5s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .game-character {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background: url('/static/img/astronaut.png') no-repeat center center;
+            background-size: contain;
+            transition: opacity 0.5s ease;
+			position: absolute;
+			bottom: 10px;
+        }
+
+        .game-character.show {
+            display: block;
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 10px #00FFFF;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #00FF7F;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #00FF7F;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .start-button:hover {
+            transform: scale(1.1);
+            background-color: #00FF00;
+            box-shadow: 0px 0px 20px #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box" id="contentBox">
+        <h1>Space Adventure</h1>
+        <p>Explore the Stars, Conquer the Unknown</p>
+        <button class="start-button" id="startButton">Get Started</button>
+    </div>
+
+    <div class="game-character " id="gameCharacter">
+		<!-- <img class="w-5" src="/static/img/astronaut.png" alt="Game Character"> -->
+	</div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            const contentBox = document.getElementById('contentBox');
+            const gameCharacter = document.getElementById('gameCharacter');
+
+            // Hide the content box
+            contentBox.classList.add('hidden');
+
+            // Show the game character after a short delay
+            setTimeout(() => {
+                gameCharacter.classList.add('show');
+            }, 500); // Match the transition duration of the content box
+        });
+    </script>
+</body>
+</html>

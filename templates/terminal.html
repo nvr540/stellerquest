@@ -1,0 +1,182 @@
+{%extends "layout.html" %} {%block body%}
+<div>
+  <div class="terminal h-full font-bold text-lg mx-auto p-4 text-[#B89076] my-4 overflow-y-auto">
+    <div class="output">
+      <a id="before"></a>
+    </div>
+    <div class="input flex items-center">
+      <span class="text-bright glowing-text2 mr-2">nivritaPodder~$</span>
+      <input class="bg-transparent border-none outline-none text-white font-semibold caret-cyan-500 w-[100%]"
+        type="text" id="commandInput" autocomplete="off" autofocus />
+    </div>
+  </div>
+</div>
+<script>
+
+  help = [
+      '<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold"> help</span></span>',
+      "<br>",
+      '<span class="command">whois</span>          Who is Nivrita?',
+      '<span class="command">whoami</span>       Who are you?',
+      '<span class="command">social</span>           Display social networks',
+      '<span class="command">projects</span>       View coding projects',
+      '<span class="command">history</span>         View command history',
+      '<span class="command">help</span>              You obviously already know what this does',
+      '<span class="command">clear</span>             Clear terminal',
+      '<span class="command">banner</span>          Display the header',
+    ];
+    notFound = [`<span class="text-bright glowing-text2 mr-2">nivritaPodder~$</span>`, '<br>',
+      `<span class="text-1xl" style = 'color: red'
+  "> Command not found, <span style="color: white">for help type <span style="color: cyan"> 'help'</span></span></span>`, '<br>'
+    ]
+          whois = ['<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold"> whois</span></span>', "<br>",
+      "Hey,", "I am Nivrita Podder, a dedicated tech enthusiast currently pursuing my degree in Electrical and Electronic Engineering (EEE) at the renowned Chittagong University of Engineering and Technology (CUET) in Bangladesh. My journey is fueled by an unwavering passion for technology, encompassing areas such as robotics, cybersecurity, and artificial intelligence.", "<br>",
+
+      "I don't just consume knowledge; I create and solve problems. My portfolio boasts noteworthy digital projects, including a visually captivating movie downloading website and an efficient Python-powered laptop assistant. My cybersecurity expertise extends to automation techniques for bolstering digital security, turning code into practical solutions for real-world challenges.", "<br>",
+
+      "My technical prowess spans multiple programming languages and technologies, including Python, C, JavaScript, HTML, Tailwind CSS, Bash, and Pine Script. Beyond the realm of code, I am a multilingual communicator fluent in English, Hindi, and Bangla, adept at bridging the gap between digital and human interaction.", "<br>",
+
+      "My journey is an ongoing pursuit of knowledge and innovation. Technology serves as my canvas, and each project represents a stroke of genius. I invite you to join me on this ever-evolving odyssey, where endless possibilities meet the future shaped by technology.", "<br>",
+
+      "In summary, I am Nivrita Podder—a driven tech enthusiast with a robust academic background, a diverse skill set, and an unyielding commitment to leveraging technology for innovative solutions.", "<br>"
+    ];
+
+
+    //   "My journey is fueled by an unwavering passion for technology, encompassing areas such as robotics, cybersecurity, and artificial intelligence.",
+
+    //   "I don't just consume knowledge; I create and solve problems.",
+
+    //   "My portfolio boasts noteworthy digital projects, including a visually captivating movie downloading website and an efficient Python-powered laptop assistant.",
+
+    //   "My cybersecurity expertise extends to automation techniques for bolstering digital security, turning code into practical solutions for real-world challenges.",
+
+    //   "My technical prowess spans multiple programming languages and technologies, including Python, C, JavaScript, HTML, Tailwind CSS, Bash, and Pine Script.",
+
+    //   "Beyond the realm of code, I am a multilingual communicator fluent in English, Hindi, and Bangla, adept at bridging the gap between digital and human interaction.",
+
+    //   "My journey is an ongoing pursuit of knowledge and innovation. Technology serves as my canvas, and each project represents a stroke of genius.",
+
+    //   "I invite you to join me on this ever-evolving odyssey, where endless possibilities meet the future shaped by technology.",
+
+    //   "In summary, I am Nivrita Podder—a driven tech enthusiast with a robust academic background, a diverse skill set, and an unyielding commitment to leveraging technology for innovative solutions.","<br>","<br>"
+    // ];
+
+
+    whoami = ['<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold"> whoami</span></span>', "<br>", "<br>", "<span class='text-bright glowing-text2'> I am the code that bridges bytes and dreams, a digital architect shaping the future's streams.</span>", "<br>", "<br>"];
+    projects = ['<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold" whois</span></span>', "<br>", "Nothing Now", "<br>"];
+    social = ['<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold" whois</span></span>', "<br>",
+      "<a href='twitter.com' class='text-bright glowing-text2 text-xl font-bold'>Twitter</a>",
+      "<a href='github.com' class='text-bright glowing-text2 text-xl font-bold'>Github</a>",
+      "<a href='instagram.com' class='text-bright glowing-text2 text-xl font-bold'>Instagram</a>",
+      "<a href='linkedin.com' class='text-bright glowing-text2 text-xl font-bold'>Linkedin</a>", "<br>"
+
+    ];
+    banner = [
+      '<span class="index">Nivrita Podder</span>',
+      "         ___   ____",
+      "       /' --;^/ ,-_\\     \\ | /       ",
+      "      / / --o\\ o-\\ \\\\   --(_)--   ",
+      "     /-/-/|o|-|\\-\\\\|\\\\   / | \\  ",
+      "      '`  ` |-|   ``",
+      "            |-|                ",
+      "            |-|O              ",
+      "            |-(\\,__           ",
+      "         ...|-|\\--,\\_....                                ",
+      "      ,;;;;;;;;;;;;;;;;;;;;;;;;,.   ",
+      "~~,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      '<span class="color2">Welcome to my interactive web terminal.</span>',
+      "<span class=\"color2\">For a list of available commands, type</span> <span class=\"command\">'help'</span><span class=\"color2\">.</span>",
+    ];
+    let history = [];
+  var before = document.getElementById("before");
+  document.addEventListener("DOMContentLoaded", function () {
+    const inputField = document.getElementById("commandInput");
+    const outputArea = document.querySelector(".output");
+    inputField.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const command = inputField.value;
+        inputField.value = "";
+        // console.log(command)
+        // history.push(command);
+        // Process the command (you can replace this with your logic)
+        const result = processCommand(command);
+
+        // Display the result
+        if (command != "clear") {
+          if (result != 0) {
+            loopLines(result, 80);
+            // addLine("<br>", "", 0);
+          } else {
+            loopLines(notFound, 80);
+          }
+        } else if (command == "clear") {
+          setTimeout(function () {
+            outputArea.innerHTML = '<a id="before"></a>';
+            before = document.getElementById("before");
+          }, 1);
+        }
+      }
+    });
+    window.onload = function () {
+      document.getElementById("commandInput").focus();
+      loopLines(banner,80)
+    };
+    // window.onload = loopLines(banner,80)
+    function addLine(text, time) {
+      var t = "";
+      for (let i = 0; i < text.length; i++) {
+        if (text.charAt(i) == " " && text.charAt(i + 1) == " ") {
+          t += "&nbsp;&nbsp;";
+          i++;
+        } else {
+          t += text.charAt(i);
+        }
+      }
+      setTimeout(function () {
+        var next = document.createElement("p");
+        next.innerHTML = t;
+        next.className = "terminalEffect";
+        // next.style.marginLeft = "20px";
+
+        before.parentNode.insertBefore(next, before);
+
+        window.scrollTo(0, document.body.offsetHeight);
+      }, time);
+    }
+
+    function loopLines(name, time) {
+      name.forEach(function (item, index) {
+        addLine(item, index * time);
+      });
+    }
+    // Sample command processing function (replace this with your logic)
+    function processCommand(command) {
+      if (command === "help") {
+        return help;
+      } else if (command === "history") {
+        addLine("<br>", 0);
+        addLine(
+          '<span class="text-bright glowing-text2 mr-2">nivritaPodder~$<span class="text-white font-semibold"> history</span></span>',
+          0
+        );
+        return history;
+      } else if (command === "banner") {
+        return banner;
+      } else if (command === "whois") {
+        return whois;
+      } else if (command === "whoami") {
+        return whoami;
+      } else if (command === "social") {
+        return social;
+      } else if (command === "projects") {
+        return projects;
+      } else if (command === "home") {
+        return home;
+      } else {
+        return 0;
+      }
+    }
+  });
+</script>
+{%endblock%}
