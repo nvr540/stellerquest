@@ -60,7 +60,7 @@ def home():
  half = math.ceil(len(skills)/2)
  skills1 = skills[:half]
  skills2 = skills[half:]
- return render_template("index.html", skills=skills, skills1=skills1, skills2=skills2, cert=cert,book=book, slide1=len(cert),slide2=len(book))
+ return render_template("test.html", skills=skills, skills1=skills1, skills2=skills2, cert=cert,book=book, slide1=len(cert),slide2=len(book))
 
 
 app.app_context().push()
@@ -92,10 +92,17 @@ def about():
 @app.route('/quest') #FOR NOW, LATER WILL MAKE A QUEST SECTION.
 def quest():
     return render_template("quest.html")
+
+# Nasa Api use
+from exo_location import get_exoplanets_data
+exo_info = []
+all_planets = ['Kepler-22 b', "Proxima Cen b",]
+for planet in all_planets:
+    exo_info.append(get_exoplanets_data([planet])[0])
 @app.route('/test') #FOR NOW, LATER WILL MAKE A QUEST SECTION.
 def test():
-    return render_template("test.html")
-
+    planet_name = exo_info[0]['pl_name']
+    return render_template("temp4.html", exo_info = exo_info)
 
 @app.route("/dashboard", methods=['GET',  'POST'])
 def dashboard():
@@ -243,4 +250,4 @@ def book_delete(sno):
 def login():
     return render_template("login.html")
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

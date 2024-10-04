@@ -1156,8 +1156,369 @@ html {
   /* Add margin to separate from parent box */
 }
 
-.visible{
-  visibility: visible;
+/* slider2 */
+
+/* Smooth Transitions */
+
+.smooth-animate {
+  transition: all 3s ease;
+  /* Adjust the transition duration and easing as needed */
+}
+
+/* Navbar */
+
+.fixed-nav-bar {
+  position: fixed;
+  z-index: 30;
+  width: 100%;
+}
+
+/* Button Shadows */
+
+.hover-shadow-btn:hover {
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan;
+}
+
+.fixed-shadow {
+  box-shadow: 0 0 5px #0ef, 0 0 10px #0ef, 0 0 25px #0ef;
+}
+
+.fixed-shadow:hover {
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan;
+}
+
+/* Section Background Image Transition */
+
+#planet-types-section {
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Exoplanet Description */
+
+#exoplanet-description {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+/* Image Slider */
+
+.fullscreen-slider {
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.fullscreen-slider .slider-items .slide-item {
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fullscreen-slider .slider-items .slide-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fullscreen-slider .slider-items .slide-item::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, #000 20%, transparent);
+}
+
+.fullscreen-slider .slider-items .slide-content {
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  width: 500px;
+  max-width: 80%;
+  z-index: 1;
+}
+
+.fullscreen-slider .slider-items .slide-content p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.fullscreen-slider .slider-items .slide-content h2 {
+  font-size: 100px;
+  margin: 0;
+}
+
+.fullscreen-slider .slider-items .slide-item.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+@keyframes slideContentAnimation {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.fullscreen-slider .slider-items .slide-item.active p:first-child,
+.fullscreen-slider .slider-items .slide-item.active h2,
+.fullscreen-slider .slider-items .slide-item.active p:nth-child(3) {
+  transform: translateY(30px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: slideContentAnimation 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.fullscreen-slider .slider-items .slide-item.active h2 {
+  animation-delay: 1s;
+}
+
+.fullscreen-slider .slider-items .slide-item.active p:nth-child(3) {
+  animation-duration: 1.3s;
+}
+
+/* Slider Arrows */
+
+.slider-controls {
+  position: absolute;
+  top: 30%;
+  right: 50px;
+  z-index: 100;
+}
+
+.slider-controls button {
+  background-color: #eee5;
+  border: none;
+  font-family: monospace;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: x-large;
+  color: #eee;
+  transition: 0.5s;
+}
+
+.slider-controls button:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/* Thumbnails */
+
+.slider-thumbnails {
+  position: absolute;
+  bottom: 20px;
+  z-index: 11;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 250px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  overflow: auto;
+  justify-content: right;
+}
+
+.slider-thumbnails::-webkit-scrollbar {
+  width: 0;
+}
+
+.slider-thumbnails .thumbnail-item {
+  width: 150px;
+  height: 220px;
+  filter: brightness(0.5);
+  transition: 0.5s;
+  flex-shrink: 0;
+}
+
+.slider-thumbnails .thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.slider-thumbnails .thumbnail-item.active {
+  filter: brightness(1.5);
+}
+
+@media screen and (max-width: 678px) {
+  .slider-thumbnails {
+    justify-content: start;
+  }
+
+  .fullscreen-slider .slider-items .slide-content h2 {
+    font-size: 60px;
+  }
+
+  .slider-controls {
+    top: 10%;
+  }
+}
+
+/* Roadmap Progress Bar */
+
+.progress-roadmap-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  height: 100px;
+  margin-top: 65px;
+}
+
+.progress-roadmap-container ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 12px;
+  position: absolute;
+  width: 100%;
+  margin-top: -33px;
+}
+
+.progress-roadmap-container li::before {
+  content: " ";
+  display: block;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px #555;
+  transition: all 0.3s ease;
+}
+
+.progress-roadmap-container li.active::before,
+.progress-roadmap-container li:hover::before {
+  border: solid 2px #ffffff;
+  background: linear-gradient(to right, #00aaff 0%, #121212 100%);
+}
+
+.progress-roadmap-container li {
+  list-style: none;
+  float: left;
+  width: 14%;
+  text-align: center;
+  color: #777;
+  text-transform: uppercase;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  vertical-align: bottom;
+  height: 60px;
+  position: relative;
+}
+
+.progress-roadmap-container li .roadmap-step {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.progress-roadmap-container li.active,
+.progress-roadmap-container li:hover {
+  color: #ffffff;
+}
+
+.progress-roadmap-container li::after {
+  content: " ";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #999;
+  margin: auto;
+  border: solid 7px #f8f7f7;
+  border-radius: 50%;
+  margin-top: 40px;
+  box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.progress-roadmap-container li:hover::after {
+  background: #bbb;
+}
+
+.progress-roadmap-container li.active::after {
+  background: #1e88e5;
+}
+
+.progress-line {
+  width: 84%;
+  margin: auto;
+  background: #444;
+  height: 6px;
+  position: absolute;
+  left: 7%;
+  top: 57px;
+  z-index: 1;
+  border-radius: 50px;
+  transition: all 0.9s ease;
+}
+
+.progress-line-fill {
+  width: 3%;
+  height: 100%;
+  background: linear-gradient(to right, #1e88e5 0%, #42a5f5 100%);
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  transition: all 0.9s ease;
+}
+
+/* Progress Content */
+
+.progress-content-container {
+  width: 90%;
+  height: 11rem;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+          backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.progress-content-container .content-block {
+  padding: 30px 40px;
+  text-align: center;
+}
+
+.progress-content-container .content-block h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.progress-content-container .content-block p {
+  font-size: 16px;
+  line-height: 1.8em;
+  color: #ffffff;
+}
+
+.progress-content-container .content-block {
+  display: none;
+  animation: fadeInUp 700ms ease 1;
+  animation-fill-mode: forwards;
+  transform: translateY(15px);
+  opacity: 0;
+}
+
+.progress-content-container .content-block.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .invisible{
@@ -1192,6 +1553,10 @@ html {
   bottom: 2.5rem;
 }
 
+.bottom-3{
+  bottom: 0.75rem;
+}
+
 .left-12{
   left: 3rem;
 }
@@ -1206,6 +1571,10 @@ html {
 
 .left-4{
   left: 1rem;
+}
+
+.left-56{
+  left: 14rem;
 }
 
 .left-\[38\%\]{
@@ -1264,6 +1633,10 @@ html {
   z-index: 10000;
 }
 
+.z-\[100\]{
+  z-index: 100;
+}
+
 .z-\[19999999999999\]{
   z-index: 19999999999999;
 }
@@ -1306,6 +1679,10 @@ html {
   margin-top: -5rem;
 }
 
+.mb-0{
+  margin-bottom: 0px;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -1320,6 +1697,10 @@ html {
 
 .mb-4{
   margin-bottom: 1rem;
+}
+
+.mb-40{
+  margin-bottom: 10rem;
 }
 
 .mb-6{
@@ -1356,10 +1737,6 @@ html {
 
 .mt-5{
   margin-top: 1.25rem;
-}
-
-.mt-6{
-  margin-top: 1.5rem;
 }
 
 .block{
@@ -1422,6 +1799,10 @@ html {
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .min-h-full{
   min-height: 100%;
 }
@@ -1480,12 +1861,6 @@ html {
 
 .translate-x-\[-50px\]{
   --tw-translate-x: -50px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-100{
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1589,6 +1964,10 @@ html {
   align-self: flex-start;
 }
 
+.self-end{
+  align-self: flex-end;
+}
+
 .justify-self-start{
   justify-self: start;
 }
@@ -1680,6 +2059,11 @@ html {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .bg-bright{
   --tw-bg-opacity: 1;
   background-color: rgb(0 238 255 / var(--tw-bg-opacity));
@@ -1690,9 +2074,24 @@ html {
   background-color: rgb(8 145 178 / var(--tw-bg-opacity));
 }
 
+.bg-gray-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
 .bg-indigo-600{
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+.bg-slate-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
 .bg-transparent{
@@ -1715,6 +2114,10 @@ html {
   background-image: url('/static/img/keplar_7b.jpeg');
 }
 
+.bg-\[url\(\'\/static\/img\/planet_info\.jpg\'\)\]{
+  background-image: url('/static/img/planet_info.jpg');
+}
+
 .bg-\[url\(\'\/static\/img\/roadmap7\.jpeg\'\)\]{
   background-image: url('/static/img/roadmap7.jpeg');
 }
@@ -1735,6 +2138,10 @@ html {
   background-repeat: no-repeat;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -1749,6 +2156,10 @@ html {
 
 .p-6{
   padding: 1.5rem;
+}
+
+.p-8{
+  padding: 2rem;
 }
 
 .px-2{
@@ -1794,6 +2205,11 @@ html {
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pl-5{
@@ -1912,6 +2328,11 @@ html {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
 .text-bright{
   --tw-text-opacity: 1;
   color: rgb(0 238 255 / var(--tw-text-opacity));
@@ -1925,10 +2346,6 @@ html {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.underline{
-  text-decoration-line: underline;
 }
 
 .caret-cyan-500{
@@ -2048,6 +2465,11 @@ html {
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-blue-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-cyan-500:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
@@ -2061,10 +2483,6 @@ html {
 .hover\:text-gray-900:hover{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.hover\:no-underline:hover{
-  text-decoration-line: none;
 }
 
 .focus\:bg-transparent:focus{
@@ -2175,96 +2593,20 @@ html {
     left: 9rem;
   }
 
-  .md\:top-10{
-    top: 2.5rem;
-  }
-
   .md\:top-2\/3{
     top: 66.666667%;
-  }
-
-  .md\:top-24{
-    top: 6rem;
-  }
-
-  .md\:top-56{
-    top: 14rem;
-  }
-
-  .md\:top-96{
-    top: 24rem;
-  }
-
-  .md\:top-16{
-    top: 4rem;
-  }
-
-  .md\:top-32{
-    top: 8rem;
-  }
-
-  .md\:left-auto{
-    left: auto;
-  }
-
-  .md\:left-\[50\%\]{
-    left: 50%;
-  }
-
-  .md\:left-\[30\%\]{
-    left: 30%;
-  }
-
-  .md\:left-\[40\%\]{
-    left: 40%;
-  }
-
-  .md\:left-\[35\%\]{
-    left: 35%;
-  }
-
-  .md\:top-\[30\%\]{
-    top: 30%;
-  }
-
-  .md\:top-\[50\%\]{
-    top: 50%;
-  }
-
-  .md\:top-\[80\%\]{
-    top: 80%;
-  }
-
-  .md\:top-60{
-    top: 15rem;
   }
 
   .md\:top-48{
     top: 12rem;
   }
 
-  .md\:top-72{
-    top: 18rem;
+  .md\:top-60{
+    top: 15rem;
   }
 
   .md\:top-80{
     top: 20rem;
-  }
-
-  .md\:bottom-10{
-    bottom: 2.5rem;
-  }
-
-  .md\:bottom-0{
-    bottom: 0px;
-  }
-
-  .md\:top-full{
-    top: 100%;
-  }
-
-  .md\:top-\[26rem\]{
-    top: 26rem;
   }
 
   .md\:top-\[30rem\]{

@@ -1,0 +1,6 @@
+<!-- chat_history.html -->
+{% for message in chat_history %}
+    <div class="{{ 'bg-cyan-600' if message.sender == 'bot' else 'bg-blue-500' }} p-3 rounded-lg {{ 'self-start' if message.sender == 'bot' else 'self-end' }} text-white">
+        <p class="text-sm">{{ message.text }}</p>
+    </div>
+{% endfor %}

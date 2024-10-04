@@ -1,7 +1,7 @@
 const phrases = [
-  "Could it rain diamonds on another planet?",
-  "What if an exoplanet had two suns?",
-  "Could alien life thrive in extreme conditions?",
+  "Are we alone in deep sky?",
+  "Could you find a friend inspace?",
+  "Have you ever wondered about observing the twinkling stars??",
   "What makes an exoplanet Earth-like?",
   "Could we find life on a frozen exoplanet?",
   "What if exoplanets had floating continents?",
@@ -459,3 +459,79 @@ function hideModal2() {
       modal.classList.add('invisible', 'scale-90');
   }, 300);
 }
+function showModal3() {
+  const modal = document.getElementById('modal3');
+  // modal.classList.remove('hidden');
+  // modal.classList.add('flex');
+  setTimeout(() => {
+      modal.classList.remove('invisible', 'scale-90');
+      modal.classList.add('visible', 'scale-100');
+  }, 10);
+}
+
+function hideModal3() {
+  const modal = document.getElementById('modal3');
+
+  setTimeout(() => {
+      modal.classList.remove('visible', 'scale-100');
+      modal.classList.add('invisible', 'scale-90');
+  }, 300);
+}
+
+// Slider 2
+
+// Updated JavaScript for the Slider and Roadmap
+
+// Variables for the slider functionality
+let customSlides = document.querySelectorAll('.slide-item');
+let customThumbnails = document.querySelectorAll('.thumbnail-item');
+let customCurrentSlide = 0;
+let customSlideInterval;
+
+// Function to activate a specific slide
+function activateCustomSlide(index) {
+  customSlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    customThumbnails[i].classList.toggle('active', i === index);
+  });
+  customCurrentSlide = index;
+}
+
+// Function to show the next slide
+function showCustomNextSlide() {
+  let nextSlideIndex = (customCurrentSlide + 1) % customSlides.length;
+  activateCustomSlide(nextSlideIndex);
+}
+
+// Function to show the previous slide
+function showCustomPrevSlide() {
+  let prevSlideIndex = (customCurrentSlide - 1 + customSlides.length) % customSlides.length;
+  activateCustomSlide(prevSlideIndex);
+}
+
+// Event listeners for the arrows
+document.getElementById('prevSlide').addEventListener('click', showCustomPrevSlide);
+document.getElementById('nextSlide').addEventListener('click', showCustomNextSlide);
+
+// Automatic slide show with a set interval
+customSlideInterval = setInterval(showCustomNextSlide, 6000);
+
+// Variables for the roadmap functionality
+let customRoadmapSteps = document.querySelectorAll('.roadmap-step');
+let customRoadmapContentSections = document.querySelectorAll('.roadmap-section-content');
+let customProgressBar = document.getElementById('progress-bar');
+
+// Function to activate a roadmap step and show corresponding content
+function activateCustomRoadmapStep(index) {
+  customRoadmapSteps.forEach((step, i) => {
+    step.classList.toggle('active', i === index);
+    customRoadmapContentSections[i].classList.toggle('active', i === index);
+  });
+  let progressBarWidth = (index / (customRoadmapSteps.length - 1)) * 100;
+  customProgressBar.style.width = `${progressBarWidth}%`;
+}
+
+// Event listeners for clicking on roadmap steps
+customRoadmapSteps.forEach((step, index) => {
+  step.addEventListener('click', () => activateCustomRoadmapStep(index));
+});

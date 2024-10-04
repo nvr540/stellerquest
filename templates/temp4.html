@@ -129,10 +129,7 @@
   <div id="progress-content-section">
     <div class="section-content discovery active">
       <h2>INTRODUCTION</h2>
-      <p>This section explores the fascinating history of exoplanet discovery, from the early hypotheses to the
-        groundbreaking findings of today. It highlights the significance of studying exoplanets, including how they help
-        us understand the potential for life beyond our Solar System, and the impact these discoveries have on our
-        understanding of the universe.</p>
+      <p>An exoplanet is a planet that orbits a star outside of our Solar System. These stars are not the Sun, but other stars within or beyond the Milky Way galaxy. Exoplanets are not stars themselves; they are planets similar to Earth, Mars, or Jupiter, but they orbit stars other than the Sun</p>
     </div>
 
     <div class="section-content strategy">
@@ -306,6 +303,90 @@
 
 
 </section>
+<!-- Fullscreen Slider Section -->
+<section class="fullscreen-slider">
+  <div id="modal3"
+class="absolute z-[19999999999999] inset-0 bg-[url('/static/img/planet_info.jpg')] bg-no-repeat bg-cover bg-center h-[90vh] w-[70%] flex items-center justify-center transition-transform duration-1000 rounded-xl my-auto ml-20 invisible scale-90">
+<div class="absolute bg-transparent p-6 rounded-lg top-1 right-2">
+    <button onclick="hideModal3()" class="text-white text-5xl hover:text-gray-900">
+        &times;
+    </button>
+</div>
+</div>
+</div>
+  <div class="slider-items">
+    <div class="slide-item active">
+      <img src="/static/img/keplar-22.jpg" alt="Slide 1">
+      <div class="slide-content">
+        <p class="content-intro">Planet</p>
+        <h2>{{exo_info[0]['pl_name']}}</h2>
+        <p class="content-desc text-sm">Kepler-22b is an exoplanet located about 600 light-years away in the constellation Cygnus. Discovered by NASA's Kepler Space Telescope, it is the first known planet in the habitable zone of a sun-like star. With a radius approximately 2.4 times that of Earth, it qualifies as a "super-Earth." While its composition and atmosphere are still unknown, Kepler-22b has the potential to support liquid water, raising the possibility of it being suitable for life. <br><span class="text-blue-400">RA: {{exo_info[1]['ra']}} DEC: {{exo_info[1]['dec']}}</span></p>
+      </div>
+  
+    </div>
+    <div class="slide-item">
+      <img src="/static/img/proxima_b.jpg" alt="Slide 2">
+      <div class="slide-content">
+        <p class="content-intro">Planet</p>
+        <h2>{{exo_info[1]['pl_name']}}</h2>
+        <p class="content-desc text-sm">Proxima Centauri b is an exoplanet orbiting Proxima Centauri, the closest star to the Sun, located about 4.24 light-years away. Discovered in 2016, it is about 1.17 times the size of Earth and lies within the habitable zone, where liquid water could exist. This rocky planet completes an orbit every 11.2 Earth days and is exposed to stellar flares that may impact its atmosphere. Despite these challenges, it is a significant target in the search for extraterrestrial life.<br> <span class="text-blue-400">RA: {{exo_info[1]['ra']}} DEC: {{exo_info[1]['dec']}}</span></p>
+      </div>
+      <button class="bg-slate-50 p-10"> hello world</button>
+    </div>
+    <div class="slide-item">
+      <img src="/static/img/k-18.jpg" alt="Slide 2">
+      <div class="slide-content">
+        <p class="content-intro">Planet</p>
+        <h2>K2-18 b</h2>
+        <p class="content-desc text-sm">
+          K2-18 b, or K-18 b, is an exoplanet about 124 light-years away in the constellation Leo. Discovered in 2015, it is a super-Earth with a radius approximately 2.6 times that of Earth and orbits within the habitable zone of its host star, K2-18. Notably, K2-18 b has shown signs of a hydrogen-rich atmosphere, raising the possibility of water vapor and making it a key target in the search for extraterrestrial life.</p>
+      </div>
+    </div>
+    <div class="slide-item">
+      <img src="/static/img/trappist.jpg" alt="Slide 2">
+      <div class="slide-content">
+        <p class="content-intro">Planet</p>
+        <h2>Trappist-1 f</h2>
+        <p class="content-desc text-sm">
+          TRAPPIST-1 is a star system about 40 light-years away in Aquarius, featuring seven Earth-sized exoplanets. Discovered in 2016, three of these planets—TRAPPIST-1 d, e, and f—are in the habitable zone, where liquid water could exist. The system's cool, red dwarf star allows for potential habitability, making TRAPPIST-1 a key target in the search for extraterrestrial life.</p>
+      </div>
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+  <div class="slider-arrows">
+    <button id="prevSlide" class="arrow-btn">‹</button>
+    <button id="nextSlide" class="arrow-btn">›</button>
+  </div>
+  <div class="slider-thumbnails">
+    <div class="thumbnail-item active">
+      <img src="/static/img/keplar-22.jpg" alt="Keppler-22 b">
+      <p>Keppler-22 b</p>
+    </div>
+    <div class="thumbnail-item">
+      <img src="/static/img/proxima_b.jpg" alt="Proxima b">
+      <p>Proxima b</p>
+
+    </div>
+
+    <div class="thumbnail-item">
+      <img src="/static/img/k-18.jpg" alt="K-18">
+      <P>K-18</P>
+    </div>
+    <div class="thumbnail-item">
+      <img src="/static/img/trappist.jpg" alt="Trappist-1 f">
+      <p>Trappist-1 f</p>
+    </div>
+    <!-- Add more thumbnails as needed -->
+  </div>
+</section>
+<div class="flex space-x-3">
+  <button onclick="showModal3()"
+      class="bg-bright text-white text-sm font-semibold  rounded-lg py-4 px-6 btnShadow mb-40 z-[100] ml-20 text-bold text-xl" >Artisitic view
+  </button>
+</div>
+
+
+
 <section class="slider">
   <p class="text-[#00aaff] text-5xl mt-20 absolute -top-20 left-[38%] z-[10000] text-center" data-aos="fade-right"
     data-aos-delay="300" data-aos-duration="1000">Stellar Insights</p>
@@ -548,7 +629,7 @@
 
         <!-- Add more messages as needed -->
       </div>
-      <div class="mb-20">
+      <div class="mb-0">
         <form class="flex">
           <input type="text" placeholder="Type your message..."
             class="w-full p-3 rounded-l-lg border border-gray-300  focus:outline-none ">
